@@ -23,7 +23,7 @@ A **Queue** follows the **First In First Out (FIFO)** principle, which makes it 
 ## 🗂️ File Structure
 
 ```
-DSA_FInal/
+DSA_Final/
 ├── railway_reservation.cpp   
 └── README.md                  
 ```
