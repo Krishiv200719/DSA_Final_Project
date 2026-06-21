@@ -112,7 +112,7 @@ Confirmed Passenger Cancels
          │
          ▼
   ┌─────────────────────┐
-  │ Waiting list empty?  │
+  │ Waiting list empty? │
   └──────────┬──────────┘
              │
         No ◄─┤─► Yes
