@@ -131,7 +131,7 @@ Confirmed Passenger Cancels
 
 ```bash
 # Step 1: Navigate to the project directory
-cd DSA_FInal
+cd DSA_Final
 
 # Step 2: Compile the program
 clang++ railway_reservation.cpp -o railway_reservation
