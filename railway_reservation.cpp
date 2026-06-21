@@ -3,7 +3,6 @@
 #include <queue>
 using namespace std;
 
-// Passenger class to store basic details of a passenger
 class Passenger
 {
 public:
@@ -23,7 +22,6 @@ public:
     }
 };
 
-// This class handles all the booking, cancellation and display logic
 class RailwayReservation
 {
 private:
@@ -31,17 +29,16 @@ private:
     int confirmedCount;
     vector<Passenger> confirmedList;
     queue<Passenger> waitingList;
-    int idCounter; // used to generate passenger id automatically
+    int idCounter;
 
 public:
     RailwayReservation(int seats)
     {
         totalSeats = seats;
         confirmedCount = 0;
-        idCounter = 100; // starting passenger id from 100
+        idCounter = 100;
     }
 
-    // function to book a new ticket
     void bookTicket(string passengerName)
     {
         idCounter = idCounter + 1;
@@ -66,13 +63,11 @@ public:
         }
     }
 
-    // function to cancel a confirmed ticket using passenger id
     void cancelTicket(int passengerId)
     {
         bool found = false;
         int index = -1;
 
-        // searching for the passenger in confirmed list
         for (int i = 0; i < confirmedList.size(); i++)
         {
             if (confirmedList[i].passengerId == passengerId)
@@ -89,7 +84,6 @@ public:
             confirmedList.erase(confirmedList.begin() + index);
             confirmedCount--;
 
-            // check if waiting list queue has someone waiting
             if (!waitingList.empty())
             {
                 Passenger nextPassenger = waitingList.front();
@@ -114,7 +108,6 @@ public:
         }
     }
 
-    // function to show all confirmed passengers
     void showConfirmedList()
     {
         cout << "\n----- Confirmed Passenger List -----" << endl;
@@ -133,7 +126,6 @@ public:
         cout << "-------------------------------------" << endl;
     }
 
-    // function to show all passengers currently in waiting list
     void showWaitingList()
     {
         cout << "\n----- Waiting List -----" << endl;
@@ -143,7 +135,7 @@ public:
         }
         else
         {
-            queue<Passenger> tempQueue = waitingList; // copy so original queue is not disturbed
+            queue<Passenger> tempQueue = waitingList;
             int position = 1;
             while (!tempQueue.empty())
             {
@@ -160,10 +152,10 @@ public:
 
 int main()
 {
-    int totalSeats = 5; // fixed number of confirmed seats for this train
+    int totalSeats = 5;
     RailwayReservation railway(totalSeats);
 
-    int choice = 0; // initializing to 0 so it does not hold garbage value
+    int choice = 0;
     string name;
     int id;
 
@@ -183,23 +175,21 @@ int main()
         cout << "Enter your choice: ";
         cin >> choice;
 
-        // checking if the user typed a letter or symbol instead of a number
         if (cin.fail())
         {
-            cin.clear();            // clearing the error flag of cin
-            cin.ignore(1000, '\n'); // throwing away the bad input from buffer
+            cin.clear();            
+            cin.ignore(1000, '\n'); 
             cout << "\nInvalid input! Please enter a number between 1 and 5." << endl;
-            continue; // go back to the start of the menu loop
+            continue; 
         }
 
         switch (choice)
         {
         case 1:
-            cin.ignore(); // clearing leftover newline left behind by cin >> choice
+            cin.ignore(); 
             cout << "Enter Passenger Name: ";
             getline(cin, name);
 
-            // checking if name is empty or made up of only spaces
             bool isBlank;
             isBlank = true;
             for (int i = 0; i < name.length(); i++)
@@ -224,7 +214,6 @@ int main()
             cout << "Enter Passenger Id to cancel: ";
             cin >> id;
 
-            // checking if the id entered was not a valid number
             if (cin.fail())
             {
                 cin.clear();
@@ -233,7 +222,6 @@ int main()
                 break;
             }
 
-            // checking for negative or zero id, since our ids start from 101
             if (id <= 0)
             {
                 cout << "\nInvalid Passenger Id! Id cannot be zero or negative." << endl;
