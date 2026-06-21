@@ -28,8 +28,6 @@ DSA_Final/
 └── README.md                  
 ```
 
-> **Note:** The entire program is written in a **single `.cpp` file** as per practical exam requirements. No multiple files or header files are used.
-
 ---
 
 ## 🏗️ Class Structure
