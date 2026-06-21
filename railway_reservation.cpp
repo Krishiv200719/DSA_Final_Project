@@ -94,12 +94,13 @@ public:
             {
                 Passenger nextPassenger = waitingList.front();
                 waitingList.pop();
-                confirmedList.push_back(nextPassenger);
+                confirmedList.insert(confirmedList.begin() + index, nextPassenger);
                 confirmedCount++;
 
                 cout << "\nSeat Vacant! Next passenger from waiting list upgraded." << endl;
                 cout << "Passenger Id   : " << nextPassenger.passengerId << endl;
                 cout << "Passenger Name : " << nextPassenger.passengerName << endl;
+                cout << "Seat Number    : " << (index + 1) << endl;
                 cout << "Status         : Confirmed" << endl;
             }
             else
