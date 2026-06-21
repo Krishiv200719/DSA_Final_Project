@@ -1,11 +1,6 @@
 # 🚆 Railway Ticket Reservation Waiting List System
 
-## 📌 Case Study 169 — DSA Practical Project
-
-**Subject:** Data Structure & Algorithms with C++  
-**Semester:** B.Tech CSE — Semester II  
-**University:** ITM Skills University  
-**Batch:** 2025-29  
+## 📌 Case Study 169 — DSA Practical Project 
 
 ---
 
@@ -29,8 +24,8 @@ A **Queue** follows the **First In First Out (FIFO)** principle, which makes it 
 
 ```
 DSA_FInal/
-├── railway_reservation.cpp    ← Single file containing the entire program
-└── README.md                  ← This file
+├── railway_reservation.cpp   
+└── README.md                  
 ```
 
 > **Note:** The entire program is written in a **single `.cpp` file** as per practical exam requirements. No multiple files or header files are used.
@@ -134,24 +129,16 @@ Confirmed Passenger Cancels
 
 ## ⚙️ How to Compile and Run
 
-### Prerequisites
-- A C++ compiler (g++ recommended)
-- Terminal / Command Prompt
-
-### Steps
-
 ```bash
 # Step 1: Navigate to the project directory
 cd DSA_FInal
 
 # Step 2: Compile the program
-g++ -o railway_reservation railway_reservation.cpp
+clang++ railway_reservation.cpp -o railway_reservation
 
 # Step 3: Run the program
 ./railway_reservation
 ```
-
-> On Windows, use `railway_reservation.exe` instead of `./railway_reservation`
 
 ---
 
@@ -261,14 +248,3 @@ Status         : Confirmed
 - Add multiple trains support
 
 ---
-
-## 👤 Author
-
-B.Tech CSE Semester II Student  
-ITM Skills University — Batch 2025-29
-
----
-
-## 📄 License
-
-This project is made for academic/educational purposes as part of DSA Practical coursework.
